@@ -6,6 +6,13 @@
     font-style: normal;
   }
 
+  main{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  main > section{
+    margin-bottom: 130px;
+  }
   /* Shared Styles */
 .display-flex{
     display: flex;
@@ -24,6 +31,16 @@
     color: white;
     border-radius: 8px;
     border: none;
+}
+.txt-primary{
+    font-weight: 400px;
+    font-size: 1rem;
+    color: #727272;
+}
+.heading-primary{
+    font-weight: bold;
+    font-size: 2.75rem;
+    color: #131313;
 }
   /* Header Styles */
 .bg-light{
@@ -73,9 +90,194 @@
     margin: 0 auto;
   }
 
+  /* Teams section */
+  .teams{
+    margin-top: 85px;
+  }
+.teams-content{
+    margin: auto 0;
+    margin-left: 73px;
+    max-width: 537px;
+}
+.teams-title{
+    max-width: 468px;
+}
+.teams-content .first{
+    font-weight: medium;
+    font-size: 2.6rem;
+    color: #727272;
+}
+.teams-content .second{
+    font-weight: bold;
+    font-size: 2.6rem;
+    color: #131313;
+}
+.teams-content .third{
+    font-weight: bold;
+    font-size: 2.6rem;
+    color: #FF900E;
+}
+.teams-imgs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Facts styles */
+.facts-content > h3{
+  margin-bottom: 24px;
+}
+.facts-content > p{
+  margin-bottom: 100px;
+  width: 540px;
+}
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.cards{
+  border: 1px solid #FF900E;
+  border-radius: 8px;
+  width: 241px;
+  height: 241px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.facts-number{
+  font-weight: 600px;
+  font-size: 2.75rem;
+  color: #424242;
+  margin: 10px 0px;
+}
+.facts-text{
+  font-weight: 600px;
+  font-size: 1.25rem;
+  color: #727272;
+}
+
+
+/* Sponsors styles */
+.sponsors-info{
+  max-width: 540px;
+  margin: 50px auto;
+  text-align: center;
+}
+.sponsor-img-container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.sponsor-img-container img{
+  filter: grayscale(100%);
+}
+
+/* Footer styles */
+footer{
+  max-width: 1440px;
+  background-color: #FFF4E7;
+  border-radius: 8px;
+  text-align: center;
+  padding: 40px 410px;
+}
+.footer-txt{
+  font-size: 1.25rem;
+  font-weight: 400px;
+  color: #424242;
+}
+/* Features styles */
+.features{
+  gap: 140px;
+}
+.features img{
+  width: 100%;
+}
+.features-content > h3{
+  border-left: 5px solid #FF900E;
+  padding-left: 21px;
+  margin-bottom: 24px;
+}
+.features-card-heading{
+  font-weight: 600px;
+  font-size: 1.25rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.features-card{
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.06);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.experience-badge{
+  width: 342px;
+  height: 200px;
+  background-color: #FF900E;
+  padding: 45px;
+  border: #FF900E;
+  border-radius: 8px;
+  margin-left: -92px;
+                       /* Why caant i use margin-right */
+  margin-top: -100px;
+}
+.btn-span1{
+  font-weight: 700px;
+  font-size: 4rem;
+  color: #FFFFFF;
+}
+.btn-span2{
+  font-weight: 500px;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
   /* Responsive media query */
   @media screen and (max-width: 576px) {
-    .navbar, .nav-lists{
+    .navbar, .nav-lists, .features{
         flex-direction: column;
+    }
+    .teams{
+      flex-direction: column-reverse;
+    }
+    .teams-content{
+        margin: 20px auto;
+        text-align: center;
+    }
+    .teams-imgs{
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0px auto;
+    }
+    .card-container, .sponsor-img-container{
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center; /*Why cant i use margin: 0 auto;*/
+      gap: 10px;
+    }
+    .sponsor-img-container{
+      gap: 30px;
+    }
+    .experience-badge{
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  /* For medium devices */
+  @media screen and (min-width: 576px) and (max-width: 992px) {
+    .features{
+      flex-direction: column;
+    }
+    .card-container, .sponsor-img-container{
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center; /*Why cant i use margin: 0 auto;*/
+      gap: 10px;
+    }
+    .experience-badge{
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .teams{
+        flex-direction: column-reverse;
+    }
+    .teams-content{
+        margin: 20px auto;
     }
   }
